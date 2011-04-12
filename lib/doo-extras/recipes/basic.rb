@@ -4,18 +4,15 @@ set :package_updates do
 end
 
 set :unattended_upgrades do
-  if_fails "[ -x /usr/bin/unattended-upgrade ]" do
-  
-    apt "unattended-upgrades"
-    apt "wget"
+  apt "unattended-upgrades"
+  apt "wget"
 
-    replace "/etc/apt/apt.conf.d/50unattended-upgrades", "//.*\"Ubuntu lucid-updates\";", "\"Ubuntu lucid-updates\";", :sudo => true
-    replace "/etc/apt/apt.conf.d/50unattended-upgrades", "//Unattended-Upgrade::Mail \"root@localhost\";", "Unattended-Upgrade::Mail \"root@localhost\";", :sudo => true
+  replace "/etc/apt/apt.conf.d/50unattended-upgrades", "//.*\"Ubuntu lucid-updates\";", "\"Ubuntu lucid-updates\";", :sudo => true
+  replace "/etc/apt/apt.conf.d/50unattended-upgrades", "//Unattended-Upgrade::Mail \"root@localhost\";", "Unattended-Upgrade::Mail \"root@localhost\";", :sudo => true
 
-    append "/etc/apt/apt.conf.d/50unattended-upgrades", "APT::Periodic::Update-Package-Lists \"1\";", :sudo => true
-    append "/etc/apt/apt.conf.d/50unattended-upgrades", "APT::Periodic::Download-Upgradeable-Packages \"1\";", :sudo => true
-    append "/etc/apt/apt.conf.d/50unattended-upgrades", "APT::Periodic::Unattended-Upgrade \"1\";", :sudo => true
-  end
+  append "/etc/apt/apt.conf.d/50unattended-upgrades", "APT::Periodic::Update-Package-Lists \"1\";", :sudo => true
+  append "/etc/apt/apt.conf.d/50unattended-upgrades", "APT::Periodic::Download-Upgradeable-Packages \"1\";", :sudo => true
+  append "/etc/apt/apt.conf.d/50unattended-upgrades", "APT::Periodic::Unattended-Upgrade \"1\";", :sudo => true
 end
 
 set :bash_completion do  
