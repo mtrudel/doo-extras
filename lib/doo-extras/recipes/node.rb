@@ -10,5 +10,5 @@ set :node do
   
   # Install the node package manager
   run 'cd src; [ -d npm ] || git clone git://github.com/isaacs/npm.git'
-  run 'cd src/npm && git pull && sudo make install'
+  run 'cd src/npm && git checkout 0.3 && git pull && sudo make install'
 end
