@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   s.name = %q{doo-extras}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mat Trudel"]
-  s.date = %q{2011-03-25}
+  s.date = %q{2011-04-11}
   s.description = %q{doo-extras provides a base set of recipes for doo for building out common daemons and configuration models on Ubuntu based servers}
   s.email = ["mat@geeky.net"]
   s.extra_rdoc_files = [
