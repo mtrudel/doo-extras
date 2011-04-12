@@ -23,6 +23,10 @@ set :vim do
   apt "vim"
 end
 
+set :emacs do
+  apt "emacs"
+end
+
 set :manpages do
   apt "man-db"
 end
